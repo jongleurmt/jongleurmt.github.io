@@ -1,0 +1,43 @@
+@keyframes float {
+    0% { top: 125%; }
+    100% { top: -25%; }
+}
+
+@keyframes nudge {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(100px); }
+}
+
+@keyframes rotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(359deg); }
+}
+
+.front { z-index: 0; }
+
+.shape {
+    animation: 15s float ease-in;
+    animation-iteration-count: infinite;
+
+    position: absolute;
+    top: 125%;
+    left: 50%;
+    height: 5rem;
+    width: 5rem;
+    
+    &.front { z-index: 10 }
+    &.back { z-index: -10 }
+
+    .shape-inner {
+        animation: 40s rotate linear;
+        animation-iteration-count: infinite;
+
+        display: block;
+        height: 100%;
+        width: 100%;
+    }
+
+    &:nth-of-type(2n+1) .shape-inner {
+        animation-direction: reverse;
+    }
+}

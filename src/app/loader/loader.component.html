@@ -1,0 +1,19 @@
+<div class="vh-100 vw-100 position-relative overflow-hidden">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-10 offset-1 col-md-4 offset-md-4">
+                <div class="vh-100 d-flex align-items-center">
+                    <img src="/assets/logo/jongleur.svg" alt="Jongleur" class="front">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div
+        *ngFor="let shape of shapes"
+        [ngStyle]="getShapeStyle(shape)"
+        [ngClass]="{ 'front': shape.zIndex == 0, 'back': shape.zIndex == 1 }"
+        class="shape">
+        <jng-shape class="shape-inner" [shape]="shape.type" color="#fff"></jng-shape>
+    </div>
+</div>
