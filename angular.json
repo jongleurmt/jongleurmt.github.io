@@ -34,6 +34,7 @@
               "src/assets",
               "src/site.webmanifest",
               "src/browserconfig.xml",
+              "src/404.html",
               "src/CNAME"
             ],
             "styles": [
