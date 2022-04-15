@@ -1,0 +1,6 @@
+.border-end { border-color: rgba(var(--light-rgb), .15) !important; }
+
+.container-fluid {
+    --bs-gutter-x: 0;
+    .row { --bs-gutter-x: 0 }
+}

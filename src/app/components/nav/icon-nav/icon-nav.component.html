@@ -1,0 +1,28 @@
+<nav>
+    <ul class="list-unstyled d-flex flex-lg-column"
+        [ngClass]="{ 'flex-column': orientation === 'vertical', 'flex-row': orientation === 'horizontal' }">
+        <li class="my-0 my-lg-4 mx-4 mx-lg-0"
+            *ngFor="let link of links">
+            <a class="labeled-icon d-flex"
+                [ngClass]="{ 'flex-column': labels === 'bottom', 'flex-row py-3': labels === 'right' }"
+                [routerLink]="link.routerLink"
+                routerLinkActive="active">
+                <div class="icon"
+                    *ngIf="link.image">
+                    <img class="inactive-icon"
+                        [src]="link.image" [alt]="link.label"
+                        *ngIf="link.image">
+
+                    <img class="active-icon"
+                        [src]="link.imageActive" [alt]="link.label"
+                        *ngIf="link.imageActive">
+                </div>
+                <i class="bi icon"
+                    [ngClass]="'bi-' + link.icon"
+                    *ngIf="link.icon"></i>
+                <span class="label mt-2"
+                    [ngClass]="{ 'mt-3 ms-3 flex-expand large-font text-start': labels === 'right' }">{{ link.label }}</span>
+            </a>
+        </li>
+    </ul>
+</nav>

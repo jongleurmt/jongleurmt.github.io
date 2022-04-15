@@ -20,11 +20,11 @@ export class LoaderComponent implements OnInit
 
     for (var i = 0; i < count; i++)
     {
-      const duration = this.randomRange(20, 40);
+      const duration = this.randomRange(15, 30);
       this.shapes[i] = {
         type: this.randomRange(0, 2, true) == 1 ? 'circle' : 'cross',
         alpha: this.randomRange(0.05, 0.3),
-        delay: this.randomRange(-duration * 2, duration * 2),
+        delay: this.randomRange(-duration * 2, duration * 1.5),
         duration: duration,
         offset: this.randomRange(5, 95),
         rotation: this.randomRange(0, 180),

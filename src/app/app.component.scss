@@ -1,0 +1,30 @@
+.navbar {
+    background-color: var(--dark);
+    border-bottom: 1px solid rgba(var(--light-rgb), .15);
+    
+    .navbar-toggler {
+        .bi { font-size: 2rem; }
+    }
+}
+
+.mobile-nav {
+    background-color: var(--dark);
+    height: 100%;
+    left: 0;
+    opacity: 0;
+    pointer-events: none;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    transition: opacity .35s ease-out;
+
+    &.show {
+        opacity: 1;
+        pointer-events: all;
+    }
+
+    .navbar-brand {
+        opacity: 0;
+        pointer-events: none;
+    }
+}

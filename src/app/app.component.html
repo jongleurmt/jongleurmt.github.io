@@ -1,1 +1,39 @@
+<nav class="navbar navbar-dark d-block d-lg-none">
+    <div class="container-fluid">
+        <a routerLink="/" class="navbar-brand">
+            <img src="/assets/logo/jongleur.svg" alt="Jongleur" class="d-block">
+        </a>
+        <button class="navbar-toggler ms-auto" type="button"
+            (click)="toggleMenu(mobileNav)"
+            data-target="#mobile-nav">
+            <i class="bi bi-list"></i>
+        </button>
+    </div>
+</nav>
+
+<div #mobileNav class="mobile-nav d-lg-none">
+    <nav class="navbar navbar-dark">
+        <div class="container-fluid">
+            <a routerLink="/" class="navbar-brand">
+                <img src="/assets/logo/jongleur.svg" alt="Jongleur" class="d-block">
+            </a>
+            <button class="navbar-toggler ms-auto" type="button"
+                (click)="toggleMenu(mobileNav)">
+                <i class="bi bi-x"></i>
+            </button>
+        </div>
+    </nav>
+    <div class="p-3">
+        <nav class="d-flex align-items-center justify-content-center">
+            <app-icon-nav orientation="horizontal" [links]="outerNav"></app-icon-nav>
+        </nav>
+
+        <nav class="mt-3">
+            <app-icon-nav orientation="vertical" labels="right"
+                [links]="getInnerNav()"
+                (click)="toggleMenu(mobileNav)"></app-icon-nav>
+        </nav>
+    </div>
+</div>
+
 <router-outlet></router-outlet>

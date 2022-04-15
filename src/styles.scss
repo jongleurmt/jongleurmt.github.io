@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
 
 :root {
-    --primary: #p;
+    --primary: #ed1683;
     --primary-rgb: 237, 22, 131;
     --secondary: #6350a1;
     --secondary-rgb: 99, 80, 161;
@@ -40,6 +40,18 @@ h1, h2, h3, h4, h5, h6 {
         transition: color .2s ease;
 
         &:hover, &.active {
+            color: var(--primary);
+        }
+    }
+}
+
+.navbar {
+    .navbar-brand img { height: 2em; }
+    .navbar-toggler {
+        border: none;
+        box-shadow: none;
+
+        &.active {
             color: var(--primary);
         }
     }

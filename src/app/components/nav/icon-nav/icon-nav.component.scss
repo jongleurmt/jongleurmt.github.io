@@ -1,0 +1,53 @@
+.labeled-icon {
+    color: var(--bs-light);
+    display: block;
+    opacity: .5;
+    text-decoration: none;
+    text-align: center;
+
+    .icon {
+        display: block;
+        font-size: 3rem;
+        height: 1em;
+        margin: auto;
+        position: relative;
+        width: 1em;
+
+        &.bi {
+            &::before { vertical-align: 0.5em; }
+        }
+
+        img {
+            height: 100%;
+            left: 0;
+            position: absolute;
+            top: 0;
+            width: 100%;
+
+            &.active-icon {
+                opacity: 0;
+                mix-blend-mode: multiply;
+            }
+
+            &.inactive-icon { opacity: 1; }
+        }
+    }
+
+    .label {
+        display: block;
+        font-size: .8rem;
+
+        &.large-font {
+            font-size: 1rem;
+        }
+    }
+
+    &:hover { opacity: .75; }
+
+    &.active {
+        color: var(--primary);
+        opacity: 1;
+
+        .icon .active-icon { opacity: 1; }
+    }
+}
